@@ -6,7 +6,11 @@ menu = """
  ||4. salir          ||
 """
 continuar = "s"
-candidatos = ("julio jaramillo", "jose jose", "obama petro")
+candidatos = """
+1. julio jaramillo 
+2. jose jose 
+3. obama petro
+"""
 c1=0
 c2=0
 c3=0
@@ -22,7 +26,7 @@ while (continuar == "s"):
    print ("---------------------------")
    continuar = input("¿Desea volver al menú? (s/n): ").lower()
   case 2:
-    votacion = int(input(f"por quien deseas votar?? (1,2,3) "))
+    votacion = int(input(f"{candidatos} por quien deseas votar?: "))
     if (votacion == 1):
       print ("---------------------------")
       print ("voto registrado")
