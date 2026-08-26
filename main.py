@@ -9,7 +9,7 @@ continuar = "s"
 candidatos = """
 1. julio jaramillo 
 2. jose jose 
-3. obama petro
+3. obama petro.
 """
 c1=0
 c2=0
