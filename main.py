@@ -6,6 +6,7 @@ menu = """
  ||4. salir          ||
 """
 continuar = "s"
+candidatos = ("julio jaramillo", "jose jose", "obama petro")
 c1=0
 c2=0
 c3=0
@@ -17,13 +18,11 @@ while (continuar == "s"):
  print ("---------------------------")
  match opcion:
   case 1:
-   print ("c1")
-   print ("c2")
-   print ("c3")
+   print (candidatos)
    print ("---------------------------")
    continuar = input("¿Desea volver al menú? (s/n): ").lower()
   case 2:
-    votacion = int(input("por quien deseas votar?? (1,2,3) "))
+    votacion = int(input(f"por quien deseas votar?? (1,2,3) "))
     if (votacion == 1):
       print ("---------------------------")
       print ("voto registrado")
