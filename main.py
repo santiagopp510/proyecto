@@ -1,76 +1,96 @@
-menu = """
-      === menu ===
- ||1. ver candidatos ||
- ||2. votar          ||
- ||3. ver resultados ||
- ||4. salir          ||
-"""
+def menu():
+    print("===MENU===")
+    print("1. Ver candidatos")
+    print("2. Votar")
+    print("3. Ver resultados ")
+    print("4. Salir ")
+    print("==================")
+
+
+def candidatos():
+    print("1. Julio Jaramillo")
+    print("2. José José")
+    print("3. Obama Petro")
+    print("==================")
+
+def resultados():
+    total = c1 + c2 + c3
+    
+    print("=== RESULTADOS ===")
+    print(f"Julio Jaramillo: {c1} votos")
+    print(f"José José:       {c2} votos")
+    print(f"Obama Petro:     {c3} votos")
+    print(f"Total de votos:  {total}")
+
+
+c1 = 0
+c2 = 0
+c3 = 0
+
 continuar = "s"
-candidatos = """
-1. julio jaramillo 
-2. jose jose 
-3. obama petro.
-"""
-c1=0
-c2=0
-c3=0
-while (continuar == "s"):
 
- print (menu)
- print ("---------------------------")
- opcion=int(input("ingrese una opcion: ")) 
- print ("---------------------------")
- match opcion:
-  case 1:
-   print (candidatos)
-   print ("---------------------------")
-   continuar = input("¿Desea volver al menú? (s/n): ").lower()
-  case 2:
-    votacion = int(input(f"{candidatos} por quien deseas votar?: "))
-    if (votacion == 1):
-      print ("---------------------------")
-      print ("voto registrado")
-      c1 = c1 + 1
-    elif (votacion == 2):
-     print ("---------------------------")
-     print ("voto registrado")
-     c2 = c2 + 1 
-    elif (votacion == 3):
-     print ("---------------------------")
-     print ("voto registrado")
-     c3 = c3 + 1
-    else:
-     print ("---------------------------")
-     print ("candidato no existe")
-     print ("---------------------------")
-    continuar = input("¿Desea volver al menú? (s/n): ").lower()
-  case 3:
-   print (c1)
-   print (c2)
-   print (c3)
-   continuar = input("¿Desea volver al menú? (s/n): ").lower()
-  case 4:
-   continuar = "n"
+while continuar == "s":
 
+    menu()
+    print("==================")
 
+    try:
+        opcion = int(input("Ingrese una opción: "))
+        print("==================")
 
+        match opcion:
 
+            case 1:
+                candidatos()
+              
 
+            case 2:
+                candidatos()
+                
 
+                votacion = int(input("¿Por quién deseas votar?: "))
+                print("==================")
 
+                match votacion:
+                    case 1:
+                        c1 += 1
+                        print("Voto registrado correctamente.")
+                        print("==================")
 
+                    case 2:
+                        c2 += 1
+                        print("Voto registrado correctamente.")
+                        print("==================")
 
+                    case 3:
+                        c3 += 1
+                        print("Voto registrado correctamente.")
+                        print("==================")
 
+                    case _:
+                        print("Candidato no existe.")
 
-#candidatos = array = ("Candidato 1", "Candidato 2", "Candidato 3")
-#for candidato in candidatos:
-#    print (candidato)
-#votacion = int(input("Ingrese el número de votos: "))
+                print("==================")
 
+            case 3:
+                resultados()
+                print("==================")
 
-# if (opcion == 1):
-#  print (candidato)
-# elif (opcion == 2):
-#  print (candidato)
-#votacion = int(input("vote por in candidato: "))
-#votos = votos + 1
+            case 4:
+                print("Gracias por participar.")
+                continuar = "n"
+                
+
+            case _:
+                print("Opción no válida.")
+
+    except ValueError:
+        print("---------------------------")
+        print("Debe ingresar un número válido.")
+
+    print("---------------------------")
+
+    if continuar == "s":
+        continuar = input("¿Desea volver al menú? (s/n): ").lower()
+print ("------------------------------------------------")
+print("Programa finalizado.")
